@@ -11,18 +11,18 @@ class File implements Pavlyshyn\Cache\Driver {
     }
 
     public function set($key, $value) {
-        return file_put_contents($this->getFilename($key), $value);
+        return file_put_contents($this->getFileName($key), $value);
     }
 
     public function get($key) {
-        return file_get_contents($this->getFilename($key));
+        return file_get_contents($this->getFileName($key));
     }
 
     public function remove($key) {
         
     }
 
-    private function getFilename($key) {
+    private function getFileName($key) {
         return $this->path . '/' . $key;
     }
 
