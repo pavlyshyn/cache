@@ -2,6 +2,22 @@
 
 use PHPUnit\Framework\TestCase;
 
-class ORMTest extends TestCase {
-    
+class Test extends TestCase {
+
+    public function testFile() {
+
+    }
+
+    public function testMemcache() {
+
+    }
+
+    public function testMongo() {
+
+    }
+
+    public function testPredis() {
+
+    }
+
 }
