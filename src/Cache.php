@@ -21,7 +21,7 @@ class Cache {
     }
 
     public function remove($key) {
-        
+        return $this->driver->remove($key);
     }
 
 }
