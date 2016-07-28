@@ -4,7 +4,16 @@ namespace Pavlyshyn\Cache\Driver;
 
 class Memcache implements Pavlyshyn\Cache\Driver {
 
-    public function set($key, $value);
+    public function set($key, $value) {
+        
+    }
 
-    public function get($key);
+    public function get($key) {
+        
+    }
+
+    public function remove($key) {
+        
+    }
+
 }
