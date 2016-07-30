@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache\Driver;
 
-class Memcache implements Pavlyshyn\Cache\Driver {
+class Memcache implements \Pavlyshyn\Cache\Driver {
 
     private $client = null;
     private $flag = 0;

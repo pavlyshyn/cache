@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache\Driver;
 
-class Apcu implements Pavlyshyn\Cache\Driver {
+class Apcu implements \Pavlyshyn\Cache\Driver {
 
     private $expire = 86400;
 

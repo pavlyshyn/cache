@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache\Driver;
 
-class Predis implements Pavlyshyn\Cache\Driver {
+class Predis implements \Pavlyshyn\Cache\Driver {
 
     private $client = null;
     private $expire = 86400;

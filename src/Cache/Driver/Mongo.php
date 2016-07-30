@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache\Driver;
 
-class Mongo implements Pavlyshyn\Cache\Driver {
+class Mongo implements \Pavlyshyn\Cache\Driver {
 
     private $collection = '';
     private $options = array(
