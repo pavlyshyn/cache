@@ -65,12 +65,4 @@ class Mongo implements \Pavlyshyn\Cache\Driver {
         }
     }
 
-    protected function pack($value) {
-        return serialize($value);
-    }
-
-    protected function unPack($value) {
-        return unserialize($value);
-    }
-
 }

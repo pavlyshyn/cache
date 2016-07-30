@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache\Driver;
 
-class File implements \Pavlyshyn\Cache\Driver {
+class File extends \Pavlyshyn\Cache\AbstractCache {
 
     private $path;
     private $expire = 86400;
@@ -59,30 +59,6 @@ class File implements \Pavlyshyn\Cache\Driver {
 
     private function getFileName($key) {
         return $this->path . '/' . $key . $this->fileExtension;
-    }
-
-    protected function pack($value) {
-        return serialize($value);
-    }
-
-    protected function unPack($value) {
-        return unserialize($value);
-    }
-
-    protected function validateData($data) {
-        if (!is_array($data)) {
-            return false;
-        }
-        foreach (['value', 'expire'] as $missing) {
-            if (!array_key_exists($missing, $data)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    protected function hasExpired($expire) {
-        return (time() > $expire);
     }
 
 }
