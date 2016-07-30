@@ -2,10 +2,11 @@
 
 namespace Pavlyshyn\Cache\Driver;
 
-class File implements Pavlyshyn\Cache\Driver {
+class File implements \Pavlyshyn\Cache\Driver {
 
     private $path;
     private $expire = 86400;
+    private $fileExtension = '.cache';
 
     public function __construct($path = '') {
         $this->path = $path;
@@ -57,7 +58,7 @@ class File implements Pavlyshyn\Cache\Driver {
     }
 
     private function getFileName($key) {
-        return $this->path . '/' . $key;
+        return $this->path . '/' . $key . $this->fileExtension;
     }
 
     protected function pack($value) {
