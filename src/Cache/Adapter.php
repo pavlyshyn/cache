@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache;
 
-interface Driver {
+interface Adapter {
 
     public function set($key, $value);
 

@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
-use Pavlyshyn\Cache\Driver\Memcache;
+use Pavlyshyn\Cache\Adapter\Memcache;
 
 class MemcacheTest extends TestCase {
 

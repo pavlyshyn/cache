@@ -1,8 +1,8 @@
 <?php
 
-namespace Pavlyshyn\Cache\Driver;
+namespace Pavlyshyn\Cache\Adapter;
 
-class Memcache implements \Pavlyshyn\Cache\Driver {
+class Memcache extends \Pavlyshyn\Cache\AbstractCache {
 
     private $client = null;
     private $flag = 0;

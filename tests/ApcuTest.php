@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
-use Pavlyshyn\Cache\Driver\Apcu;
+use Pavlyshyn\Cache\Adapter\Apcu;
 
 class ApcuTest extends TestCase {
 

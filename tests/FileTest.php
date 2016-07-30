@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
-use Pavlyshyn\Cache\Driver\File;
+use Pavlyshyn\Cache\Adapter\File;
 
 class FileTest extends TestCase {
 

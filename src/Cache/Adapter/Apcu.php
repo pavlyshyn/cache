@@ -1,8 +1,8 @@
 <?php
 
-namespace Pavlyshyn\Cache\Driver;
+namespace Pavlyshyn\Cache\Adapter;
 
-class Apcu implements \Pavlyshyn\Cache\Driver {
+class Apcu  extends \Pavlyshyn\Cache\AbstractCache {
 
     private $expire = 86400;
 

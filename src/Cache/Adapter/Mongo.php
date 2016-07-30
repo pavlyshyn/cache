@@ -1,8 +1,8 @@
 <?php
 
-namespace Pavlyshyn\Cache\Driver;
+namespace Pavlyshyn\Cache\Adapter;
 
-class Mongo implements \Pavlyshyn\Cache\Driver {
+class Mongo  extends \Pavlyshyn\Cache\AbstractCache {
 
     private $collection = '';
     private $options = array(

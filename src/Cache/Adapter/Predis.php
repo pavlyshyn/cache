@@ -1,8 +1,8 @@
 <?php
 
-namespace Pavlyshyn\Cache\Driver;
+namespace Pavlyshyn\Cache\Adapter;
 
-class Predis implements \Pavlyshyn\Cache\Driver {
+class Predis  extends \Pavlyshyn\Cache\AbstractCache {
 
     private $client = null;
     private $expire = 86400;

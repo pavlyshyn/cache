@@ -2,30 +2,30 @@
 
 namespace Pavlyshyn;
 
-use Pavlyshyn\Cache\Driver;
+use Pavlyshyn\Cache\Adapter;
 
 class Cache {
 
-    private $driver = null;
+    private $adapter = null;
 
-    public function __construct(Driver $driver) {
-        $this->driver = $driver;
+    public function __construct(Adapter $adapter) {
+        $this->adapter = $adapter;
     }
 
     public function set($key, $value) {
-        return $this->driver->set($key, $value);
+        return $this->adapter->set($key, $value);
     }
 
     public function get($key) {
-        return $this->driver->get($key);
+        return $this->adapter->get($key);
     }
 
     public function remove($key) {
-        return $this->driver->remove($key);
+        return $this->adapter->remove($key);
     }
 
     public function clear() {
-        return $this->driver->clear();
+        return $this->adapter->clear();
     }
 
 }

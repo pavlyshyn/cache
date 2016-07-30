@@ -1,6 +1,6 @@
 <?php
 
-namespace Pavlyshyn\Cache\Driver;
+namespace Pavlyshyn\Cache\Adapter;
 
 class File extends \Pavlyshyn\Cache\AbstractCache {
 

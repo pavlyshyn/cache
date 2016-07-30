@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache;
 
-abstract class AbstractCache implements \Pavlyshyn\Cache\Driver {
+abstract class AbstractCache implements \Pavlyshyn\Cache\Adapter {
 
     protected function pack($value) {
         return serialize($value);
