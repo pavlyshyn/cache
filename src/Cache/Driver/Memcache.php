@@ -23,5 +23,9 @@ class Memcache implements Pavlyshyn\Cache\Driver {
     public function remove($key) {
         $this->client->set($key, NULL);
     }
+    
+    public function clear() {
+        
+    }
 
 }

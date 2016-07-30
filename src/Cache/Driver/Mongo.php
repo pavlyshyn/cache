@@ -39,11 +39,11 @@ class Mongo implements Pavlyshyn\Cache\Driver {
             '_id' => $key,
             'value' => $this->pack($value),
         );
-        $this->collection->update(array('_id' => $key), $item, array('upsert' => true));
+        $this->selectCollection($this->collection)->update(array('_id' => $key), $item, array('upsert' => true));
     }
 
     public function get($key) {
-        $data = $this->collection->findOne(array('_id' => $key));
+        $data = $this->selectCollection($this->collection)->findOne(array('_id' => $key));
         if (isset($data)) {
             return $this->unPack($data['value']);
         }
@@ -51,7 +51,18 @@ class Mongo implements Pavlyshyn\Cache\Driver {
     }
 
     public function remove($key) {
-        $this->collection->remove(array('_id' => $key));
+        $this->selectCollection($this->collection)->remove(array('_id' => $key));
+    }
+
+    public function clear() {
+        $this->selectCollection($this->collection)->drop();
+    }
+
+    public function selectCollection($collection) {
+        if ($this->connection) {
+            $c = $this->connection->selectCollection($collection);
+            return $c;
+        }
     }
 
     protected function pack($value) {

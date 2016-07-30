@@ -47,6 +47,15 @@ class File implements Pavlyshyn\Cache\Driver {
         return false;
     }
 
+    public function clear() {
+        $files = glob($this->path . '/*');
+        foreach ($files as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
+        }
+    }
+
     private function getFileName($key) {
         return $this->path . '/' . $key;
     }

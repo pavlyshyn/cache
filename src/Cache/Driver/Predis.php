@@ -34,6 +34,10 @@ class Predis implements Pavlyshyn\Cache\Driver {
         $cmd->setArguments([$key]);
         $this->client->executeCommand($cmd);
     }
+    
+    public function clear() {
+        
+    }
 
     protected function pack($value) {
         return serialize($value);

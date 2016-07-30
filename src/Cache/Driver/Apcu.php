@@ -21,5 +21,9 @@ class Apcu implements Pavlyshyn\Cache\Driver {
     public function remove($key) {
         
     }
+    
+    public function clear() {
+        
+    }
 
 }
