@@ -24,4 +24,8 @@ class Cache {
         return $this->driver->remove($key);
     }
 
+    public function clear() {
+        return $this->driver->clear();
+    }
+
 }

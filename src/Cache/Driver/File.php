@@ -31,11 +31,11 @@ class File implements \Pavlyshyn\Cache\Driver {
     public function get($key) {
         $path = $this->getFileName($key);
         if (!file_exists($path)) {
-            return;
+            return false;
         }
         $data = $this->unPack(file_get_contents($path));
         if (!$data || !$this->validateData($data) || $this->hasExpired($data['expire'])) {
-            return;
+            return false;
         }
         return $data['value'];
     }
