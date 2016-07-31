@@ -17,7 +17,16 @@ echo $cache->get('key');
 ```
 
 
-#### Memcache adapter
+### Methods
+```php
+set($key, $value);
+get($key);
+remove($key);
+clear();
+```
+
+
+### Memcache adapter
 ```php
 use Pavlyshyn\Cache\Adapter\Memcache;
 
