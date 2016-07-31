@@ -1,5 +1,10 @@
 ## Usage
 
+```
+composer require pavlyshyn/cache
+```
+
+
 ```php
 use Pavlyshyn\Cache;
 use Pavlyshyn\Cache\Adapter\File;
