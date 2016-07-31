@@ -20,8 +20,11 @@ echo $cache->get('key');
 ### Methods
 ```php
 set($key, $value);
+
 get($key);
+
 remove($key);
+
 clear();
 ```
 
