@@ -19,13 +19,13 @@ echo $cache->get('key');
 
 ### Methods
 ```php
-set($key, $value);
+$cache->set($key, $value);
 
-get($key);
+$cache->get($key);
 
-remove($key);
+$cache->remove($key);
 
-clear();
+$cache->clear();
 ```
 
 
