@@ -4,6 +4,8 @@ namespace Pavlyshyn\Cache;
 
 abstract class AbstractCache implements \Pavlyshyn\Cache\Adapter {
 
+    protected $expire = 86400;
+    
     protected function pack($value) {
         return serialize($value);
     }

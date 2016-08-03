@@ -2,10 +2,9 @@
 
 namespace Pavlyshyn\Cache\Adapter;
 
-class Predis  extends \Pavlyshyn\Cache\AbstractCache {
+class Predis extends \Pavlyshyn\Cache\AbstractCache {
 
     private $client = null;
-    private $expire = 86400;
 
     public function __construct($client) {
         $this->client = $client;

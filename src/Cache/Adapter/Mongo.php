@@ -2,7 +2,7 @@
 
 namespace Pavlyshyn\Cache\Adapter;
 
-class Mongo  extends \Pavlyshyn\Cache\AbstractCache {
+class Mongo extends \Pavlyshyn\Cache\AbstractCache {
 
     private $collection = '';
     private $options = array(

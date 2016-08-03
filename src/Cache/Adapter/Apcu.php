@@ -2,9 +2,7 @@
 
 namespace Pavlyshyn\Cache\Adapter;
 
-class Apcu  extends \Pavlyshyn\Cache\AbstractCache {
-
-    private $expire = 86400;
+class Apcu extends \Pavlyshyn\Cache\AbstractCache {
 
     public function __construct() {
         

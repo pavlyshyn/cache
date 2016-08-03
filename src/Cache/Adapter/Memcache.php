@@ -6,7 +6,6 @@ class Memcache extends \Pavlyshyn\Cache\AbstractCache {
 
     private $client = null;
     private $flag = 0;
-    private $expire = 86400;
 
     public function __construct($host = "127.0.0.1", $port = 11211) {
         try {

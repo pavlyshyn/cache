@@ -5,7 +5,6 @@ namespace Pavlyshyn\Cache\Adapter;
 class File extends \Pavlyshyn\Cache\AbstractCache {
 
     private $path;
-    private $expire = 86400;
     private $fileExtension = '.cache';
 
     public function __construct($path = '') {
