@@ -1,11 +1,11 @@
 
-## Install
+### Install
 ```
 composer require pavlyshyn/cache
 ```
 
 
-## Usage
+### Usage
 ```php
 use Pavlyshyn\Cache;
 use Pavlyshyn\Cache\Adapter\File;
