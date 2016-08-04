@@ -35,3 +35,19 @@ use Pavlyshyn\Cache\Adapter\Memcache;
 
 $adapter = new Memcache('127.0.0.1', 11211);
 ```
+
+
+### Apcu adapter
+```php
+use Pavlyshyn\Cache\Adapter\Apcu;
+
+$adapter = new Apcu();
+```
+
+
+### Tests
+```
+phpunit --bootstrap vendor/autoload.php  tests/ApcuTest.php
+phpunit --bootstrap vendor/autoload.php  tests/MemcacheTest
+phpunit --bootstrap vendor/autoload.php  tests/FileTest
+```

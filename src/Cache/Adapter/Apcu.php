@@ -17,14 +17,14 @@ class Apcu extends \Pavlyshyn\Cache\AbstractCache {
             'expire' => (int) $expire + time(),
         ];
         if (!apc_store($key, $this->pack($data), $expire)) {
-            throw new CacheException('Error saving data with key "' . $key . '" to the apcu cache.');
+            throw new \Exception('Error saving data with key "' . $key . '" to the apcu cache.');
         }
     }
 
     public function get($key) {
         $data = $this->unPack(apc_fetch($key));
-        if (!$this->validateDataFromCache($data, $key)) {
-            $this->del($key);
+        if (!$this->validateData($data, $key)) {
+            $this->remove($key);
             return;
         }
         if ($this->hasExpired($data['expire'])) {
@@ -39,7 +39,7 @@ class Apcu extends \Pavlyshyn\Cache\AbstractCache {
     }
 
     public function clear() {
-        
+        apc_clear_cache();
     }
 
 }
