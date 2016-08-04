@@ -65,10 +65,19 @@ $adapter = new Predis('tcp://10.0.0.1:6379');
 ```
 
 
+### XCache adapter
+```php
+use Pavlyshyn\Cache\Adapter\XCache;
+
+$adapter = new Cache(new XCache('admin', ''));
+```
+
+
 ### Tests
 ```
 phpunit --bootstrap vendor/autoload.php  tests/ApcuTest.php
 phpunit --bootstrap vendor/autoload.php  tests/MemcacheTest
+phpunit --bootstrap vendor/autoload.php  tests/XCacheTest.php
 phpunit --bootstrap vendor/autoload.php  tests/PredisTest.php
 phpunit --bootstrap vendor/autoload.php  tests/FileTest
 ```
