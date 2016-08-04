@@ -6,18 +6,18 @@
  * @author Roman Pavlyshyn <roman@pavlyshyn.com>
  */
 
-namespace Pavlyshyn\Tests;
+namespace Pavlyshyn\Tests\Adapter;
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
-use Pavlyshyn\Cache\Adapter\File;
+use Pavlyshyn\Cache\Adapter\Memory;
 
-class FileTest extends TestCase {
+class MemoryTest extends TestCase {
 
     use \Pavlyshyn\Tests\Cache;
 
     public function __construct() {
-        $this->cache = new Cache(new File(__DIR__ . '/tmp'));
+        $this->cache = new Cache(new Memory());
     }
 
 }

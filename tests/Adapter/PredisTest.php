@@ -6,18 +6,18 @@
  * @author Roman Pavlyshyn <roman@pavlyshyn.com>
  */
 
-namespace Pavlyshyn\Tests;
+namespace Pavlyshyn\Tests\Adapter;
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
-use Pavlyshyn\Cache\Adapter\XCache;
+use Pavlyshyn\Cache\Adapter\Predis;
 
-class XCacheTest extends TestCase {
+class PredisTest extends TestCase {
 
     use \Pavlyshyn\Tests\Cache;
 
     public function __construct() {
-        $this->cache = new Cache(new XCache('admin', ''));
+        $this->cache = new Cache(new Predis());
     }
 
 }

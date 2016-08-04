@@ -86,10 +86,10 @@ $adapter = new Memory();
 
 ### Tests
 ```
-phpunit --bootstrap vendor/autoload.php  tests/ApcuTest
-phpunit --bootstrap vendor/autoload.php  tests/MemcacheTest
-phpunit --bootstrap vendor/autoload.php  tests/XCacheTest
-phpunit --bootstrap vendor/autoload.php  tests/PredisTest
-phpunit --bootstrap vendor/autoload.php  tests/MemoryTest
-phpunit --bootstrap vendor/autoload.php  tests/FileTest
+phpunit --bootstrap vendor/autoload.php  tests/Adapter/ApcuTest
+phpunit --bootstrap vendor/autoload.php  tests/Adapter/MemcacheTest
+phpunit --bootstrap vendor/autoload.php  tests/Adapter/XCacheTest
+phpunit --bootstrap vendor/autoload.php  tests/Adapter/PredisTest
+phpunit --bootstrap vendor/autoload.php  tests/Adapter/MemoryTest
+phpunit --bootstrap vendor/autoload.php  tests/Adapter/FileTest
 ```

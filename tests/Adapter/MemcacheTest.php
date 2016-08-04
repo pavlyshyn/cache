@@ -6,7 +6,7 @@
  * @author Roman Pavlyshyn <roman@pavlyshyn.com>
  */
 
-namespace Pavlyshyn\Tests;
+namespace Pavlyshyn\Tests\Adapter;
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
