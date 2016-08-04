@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Tests;
 
 use PHPUnit\Framework\TestCase;

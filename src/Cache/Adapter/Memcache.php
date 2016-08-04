@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Cache\Adapter;
 
 class Memcache extends \Pavlyshyn\Cache\AbstractCache {
@@ -22,6 +28,11 @@ class Memcache extends \Pavlyshyn\Cache\AbstractCache {
 
     public function get($key) {
         return $this->client->get($key);
+    }
+
+    public function exists($key) {
+        $data = $this->client->get($key);
+        return ($data) ? true : false;
     }
 
     public function remove($key) {

@@ -1,10 +1,11 @@
-## Usage
 
+## Install
 ```
 composer require pavlyshyn/cache
 ```
 
 
+## Usage
 ```php
 use Pavlyshyn\Cache;
 use Pavlyshyn\Cache\Adapter\File;
@@ -13,7 +14,7 @@ $adapter = new File(__DIR__ . '/tmp');
 $cache = new Cache($adapter);
 
 $cache->set('key', 'value');
-echo $cache->get('key');
+var_dump($cache->get('key'));
 ```
 
 
@@ -22,6 +23,8 @@ echo $cache->get('key');
 $cache->set($key, $value);
 
 $cache->get($key);
+
+$cache->exists($key);
 
 $cache->remove($key);
 
@@ -73,11 +76,20 @@ $adapter = new Cache(new XCache('admin', ''));
 ```
 
 
+### Memory adapter
+```php
+use Pavlyshyn\Cache\Adapter\Memory;
+
+$adapter = new Cache(new Memory());
+```
+
+
 ### Tests
 ```
-phpunit --bootstrap vendor/autoload.php  tests/ApcuTest.php
+phpunit --bootstrap vendor/autoload.php  tests/ApcuTest
 phpunit --bootstrap vendor/autoload.php  tests/MemcacheTest
-phpunit --bootstrap vendor/autoload.php  tests/XCacheTest.php
-phpunit --bootstrap vendor/autoload.php  tests/PredisTest.php
+phpunit --bootstrap vendor/autoload.php  tests/XCacheTest
+phpunit --bootstrap vendor/autoload.php  tests/PredisTest
+phpunit --bootstrap vendor/autoload.php  tests/MemoryTest
 phpunit --bootstrap vendor/autoload.php  tests/FileTest
 ```

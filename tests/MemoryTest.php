@@ -10,14 +10,14 @@ namespace Pavlyshyn\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
-use Pavlyshyn\Cache\Adapter\XCache;
+use Pavlyshyn\Cache\Adapter\Memory;
 
-class XCacheTest extends TestCase {
+class MemoryTest extends TestCase {
 
     use \Pavlyshyn\Tests\Cache;
 
     public function __construct() {
-        $this->cache = new Cache(new XCache('admin', ''));
+        $this->cache = new Cache(new Memory());
     }
 
 }

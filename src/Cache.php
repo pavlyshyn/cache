@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn;
 
 use Pavlyshyn\Cache\Adapter;
@@ -18,6 +24,10 @@ class Cache {
 
     public function get($key) {
         return $this->adapter->get($key);
+    }
+
+    public function exists($key) {
+        return $this->adapter->exists($key);
     }
 
     public function remove($key) {

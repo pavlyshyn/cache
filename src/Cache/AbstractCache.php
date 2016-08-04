@@ -1,11 +1,17 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Cache;
 
 abstract class AbstractCache implements \Pavlyshyn\Cache\Adapter {
 
     protected $expire = 86400;
-    
+
     protected function pack($value) {
         return serialize($value);
     }

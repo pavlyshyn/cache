@@ -1,12 +1,14 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Cache\Adapter;
 
 class Apcu extends \Pavlyshyn\Cache\AbstractCache {
-
-    public function __construct() {
-        
-    }
 
     public function set($key, $value, $expire = null) {
         if (!$expire) {
@@ -32,6 +34,10 @@ class Apcu extends \Pavlyshyn\Cache\AbstractCache {
             return;
         }
         return $data['value'];
+    }
+
+    public function exists($key) {
+        return apc_exists($key);
     }
 
     public function remove($key) {

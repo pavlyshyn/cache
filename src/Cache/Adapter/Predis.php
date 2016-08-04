@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Cache\Adapter;
 
 class Predis extends \Pavlyshyn\Cache\AbstractCache {
@@ -34,6 +40,12 @@ class Predis extends \Pavlyshyn\Cache\AbstractCache {
 
     public function get($key) {
         return $this->unPack($this->client->get($key));
+    }
+
+    public function exists($key) {
+        $cmd = $this->client->createCommand('EXISTS');
+        $cmd->setArguments([$key]);
+        return $this->client->executeCommand($cmd);
     }
 
     public function remove($key) {

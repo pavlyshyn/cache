@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Cache\Adapter;
 
 class Mongo extends \Pavlyshyn\Cache\AbstractCache {
@@ -48,6 +54,10 @@ class Mongo extends \Pavlyshyn\Cache\AbstractCache {
             return $this->unPack($data['value']);
         }
         return false;
+    }
+
+    public function exists($key) {
+        return $this->selectCollection($this->collection)->count(array('_id' => $key)) > 0;
     }
 
     public function remove($key) {

@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Cache\Adapter;
 
 class File extends \Pavlyshyn\Cache\AbstractCache {
@@ -28,15 +34,13 @@ class File extends \Pavlyshyn\Cache\AbstractCache {
     }
 
     public function get($key) {
-        $path = $this->getFileName($key);
-        if (!file_exists($path)) {
-            return false;
-        }
-        $data = $this->unPack(file_get_contents($path));
-        if (!$data || !$this->validateData($data) || $this->hasExpired($data['expire'])) {
-            return false;
-        }
-        return $data['value'];
+        $data = $this->getData($key);
+        return ($data) ? $data['value'] : false;
+    }
+
+    public function exists($key) {
+        $data = $this->getData($key);
+        return ($data) ? true : false;
     }
 
     public function remove($key) {
@@ -58,6 +62,18 @@ class File extends \Pavlyshyn\Cache\AbstractCache {
 
     private function getFileName($key) {
         return $this->path . '/' . $key . $this->fileExtension;
+    }
+
+    private function getData($key) {
+        $path = $this->getFileName($key);
+        if (!file_exists($path)) {
+            return false;
+        }
+        $data = $this->unPack(file_get_contents($path));
+        if (!$data || !$this->validateData($data) || $this->hasExpired($data['expire'])) {
+            return false;
+        }
+        return $data;
     }
 
 }

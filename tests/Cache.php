@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Tests;
 
 trait Cache {
@@ -11,8 +17,15 @@ trait Cache {
     ];
 
     public function testSetAndGetData() {
+        $startTime = microtime();
+
         $this->cache->set('testArray', $this->data);
-        $this->assertEquals($this->cache->get('testArray'), $this->data);
+        $data = $this->cache->get('testArray');
+
+        $endTime = microtime();
+        echo 'execution time: ' . ($endTime - $startTime);
+
+        $this->assertEquals($data, $this->data);
     }
 
     public function testRemoveData() {

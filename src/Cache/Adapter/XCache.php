@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the pavlyshyn/cache package
+ * 
+ * @author Roman Pavlyshyn <roman@pavlyshyn.com>
+ */
+
 namespace Pavlyshyn\Cache\Adapter;
 
 class XCache extends \Pavlyshyn\Cache\AbstractCache {
@@ -22,6 +28,10 @@ class XCache extends \Pavlyshyn\Cache\AbstractCache {
 
     public function get($key) {
         return $this->unPack(xcache_get($key));
+    }
+
+    public function exists($key) {
+        return xcache_isset($key);
     }
 
     public function remove($key) {
