@@ -6,8 +6,16 @@ class Predis extends \Pavlyshyn\Cache\AbstractCache {
 
     private $client = null;
 
-    public function __construct($client) {
-        $this->client = $client;
+    public function __construct($config = null) {
+        try {
+            if ($config === null) {
+                $this->client = $client = new \Predis\Client();
+            } else {
+                $this->client = $client = new \Predis\Client($config);
+            }
+        } catch (\Exception $e) {
+            echo 'Error Predis connection (' . $e->getCode() . '): ', $e->getMessage(), "\n";
+        }
     }
 
     public function __destruct() {
@@ -35,7 +43,8 @@ class Predis extends \Pavlyshyn\Cache\AbstractCache {
     }
 
     public function clear() {
-        
+        $cmd = $this->client->createCommand('FLUSHALL');
+        $this->client->executeCommand($cmd);
     }
 
 }

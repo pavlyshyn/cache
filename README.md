@@ -45,9 +45,30 @@ $adapter = new Apcu();
 ```
 
 
+### [Predis](https://github.com/nrk/predis) adapter
+```php
+use Pavlyshyn\Cache\Adapter\Predis;
+
+$adapter = new Predis();
+
+OR
+
+$adapter = new Predis([
+    'scheme' => 'tcp',
+    'host'   => '10.0.0.1',
+    'port'   => 6379,
+]);
+
+OR
+
+$adapter = new Predis('tcp://10.0.0.1:6379');
+```
+
+
 ### Tests
 ```
 phpunit --bootstrap vendor/autoload.php  tests/ApcuTest.php
 phpunit --bootstrap vendor/autoload.php  tests/MemcacheTest
+phpunit --bootstrap vendor/autoload.php  tests/PredisTest.php
 phpunit --bootstrap vendor/autoload.php  tests/FileTest
 ```
