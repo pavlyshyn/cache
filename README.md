@@ -72,7 +72,7 @@ $adapter = new Predis('tcp://10.0.0.1:6379');
 ```php
 use Pavlyshyn\Cache\Adapter\XCache;
 
-$adapter = new Cache(new XCache('admin', ''));
+$adapter = new XCache('admin', '');
 ```
 
 
@@ -80,7 +80,7 @@ $adapter = new Cache(new XCache('admin', ''));
 ```php
 use Pavlyshyn\Cache\Adapter\Memory;
 
-$adapter = new Cache(new Memory());
+$adapter = new Memory();
 ```
 
 
