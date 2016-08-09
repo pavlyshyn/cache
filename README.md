@@ -40,11 +40,11 @@ $adapter = new Memcache('127.0.0.1', 11211);
 ```
 
 
-### Apcu adapter
+### Apc adapter
 ```php
-use Pavlyshyn\Cache\Adapter\Apcu;
+use Pavlyshyn\Cache\Adapter\Apc;
 
-$adapter = new Apcu();
+$adapter = new Apc();
 ```
 
 
@@ -86,7 +86,7 @@ $adapter = new Memory();
 
 ### Tests
 ```
-phpunit --bootstrap vendor/autoload.php  tests/Adapter/ApcuTest
+phpunit --bootstrap vendor/autoload.php  tests/Adapter/ApcTest
 phpunit --bootstrap vendor/autoload.php  tests/Adapter/MemcacheTest
 phpunit --bootstrap vendor/autoload.php  tests/Adapter/XCacheTest
 phpunit --bootstrap vendor/autoload.php  tests/Adapter/PredisTest

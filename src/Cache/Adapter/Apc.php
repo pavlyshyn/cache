@@ -8,7 +8,7 @@
 
 namespace Pavlyshyn\Cache\Adapter;
 
-class Apcu extends \Pavlyshyn\Cache\AbstractCache {
+class Apc extends \Pavlyshyn\Cache\AbstractCache {
 
     public function set($key, $value, $expire = null) {
         if (!$expire) {
