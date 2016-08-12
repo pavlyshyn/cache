@@ -22,8 +22,10 @@ class Memcache extends \Pavlyshyn\Cache\AbstractCache {
         }
     }
 
-    public function set($key, $value) {
-        $this->client->set($key, $value, $this->flag, $this->expire);
+    public function set($key, $value, $expire = null) {
+        $expire = ($expire) ? : $this->expire;
+        
+        $this->client->set($key, $value, $this->flag, $expire);
     }
 
     public function get($key) {
