@@ -44,4 +44,12 @@ trait Cache {
         $this->assertEquals($this->cache->get('testArray1'), false);
     }
 
+    public function testExpiration() {
+        $this->cache->set('testArray', $this->data, 1);
+        
+        sleep(2);
+        
+        $this->assertEquals($this->cache->get('testArray'), false);
+    }
+
 }

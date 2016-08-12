@@ -10,7 +10,7 @@ namespace Pavlyshyn\Tests\Adapter;
 
 use PHPUnit\Framework\TestCase;
 use Pavlyshyn\Cache;
-use Pavlyshyn\Cache\Adapter\Apcu;
+use Pavlyshyn\Cache\Adapter\Apc;
 
 class ApcTest extends TestCase {
 

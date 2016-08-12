@@ -18,8 +18,8 @@ class Cache {
         $this->adapter = $adapter;
     }
 
-    public function set($key, $value) {
-        return $this->adapter->set($key, $value);
+    public function set($key, $value, $expire = null) {
+        return $this->adapter->set($key, $value, $expire);
     }
 
     public function get($key) {

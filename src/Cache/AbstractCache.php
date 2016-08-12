@@ -33,6 +33,11 @@ abstract class AbstractCache implements \Pavlyshyn\Cache\Adapter {
     }
 
     protected function hasExpired($expire) {
+        echo "\n--------\n";
+        echo time()."\n";
+        echo $expire."\n";
+        echo "\n--------\n";
+        
         return (time() > $expire);
     }
 
