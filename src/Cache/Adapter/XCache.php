@@ -22,12 +22,26 @@ class XCache extends \Pavlyshyn\Cache\AbstractCache {
 
     public function set($key, $value, $expire = null) {
         $expire = ($expire) ? : $this->expire;
-
-        xcache_set($key, $this->pack($value), $expire);
+        
+        $item = $this->pack([
+            'value' => $value,
+            'expire' => (int) $expire + time(),
+        ]);
+        
+        xcache_set($key, $item);
     }
 
     public function get($key) {
-        return $this->unPack(xcache_get($key));
+        $data = $this->getData($key);
+        return ($data) ? $data['value'] : false;
+    }
+
+    private function getData($key) {
+        $data = $this->unPack(xcache_get($key));
+        if (!$data || !$this->validateData($data) || $this->hasExpired($data['expire'])) {
+            return false;
+        }
+        return $data;
     }
 
     public function exists($key) {
